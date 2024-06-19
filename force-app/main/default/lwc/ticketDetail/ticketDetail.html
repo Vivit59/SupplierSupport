@@ -1,0 +1,79 @@
+<!-- sldsValidatorIgnore -->
+<!-- sldsValidatorIgnore -->
+<!-- sldsValidatorIgnore -->
+<template>
+    <section class="custom-panel slds-panel slds-size_large slds-panel_docked slds-panel_docked-right slds-is-open">
+        <header class="entete">
+            <h2 >Détail Ticket</h2>
+            <button class="slds-button slds-button_icon slds-panel__close slds-button_icon-inverse" 
+            title="Close" 
+            onclick={handleClose}>
+                <lightning-icon icon-name="utility:close" alternative-text="close" size="small"></lightning-icon>
+                <span class="slds-assistive-text">Close</span>
+            </button>
+        </header>
+        <div class="slds-panel__body corps">
+            <div class="slds-grid slds-wrap">
+                <div class="slds-col slds-size_3-of-12 corps">
+                    <dt class="slds-item_label slds-text-color_weak" title="Date">Date:</dt>
+                </div>
+                <div class="slds-col slds-size_9-of-12 corps">
+                     <dd class="slds-item_detail x position" title={supplierCase.SubmittedDate__c}>{supplierCase.SubmittedDate__c}</dd>
+                </div>
+                <div class="slds-col slds-size_3-of-12 corps">
+                    <dt class="slds-item_label slds-text-color_weak " title="Sujet">Sujet:</dt>
+                </div>
+                <div class="slds-col slds-size_9-of-12 corps">
+                    <dd class="slds-item_detail x position" title={supplierCase.Title__c}>{supplierCase.Title__c}</dd>
+                </div>
+
+               <div class="slds-col slds-size_3-of-12 corps">
+                    <dt class="slds-item_label slds-text-color_weak " title="Statut">Statut:</dt>        
+                </div>
+
+                <div class="slds-col slds-size_3-of-12 corps">
+                    <dd class="slds-item_detail " title={supplierCase.Statut_Logo__c}>
+                        <img src={supplierCase.Statut_Logo__c} alt="Statut_Logo">
+                    </dd>
+                </div>
+
+                <div class="slds-col slds-size_3-of-12 corps" >
+                    <dt class="slds-item_label slds-text-color_weak " title="Criticité">Criticité:</dt>   
+                </div>
+                <div class="slds-col slds-size_3-of-12 corps">
+                    <dd class="slds-item_detail " title={supplierCase.Criticite_Logo__c}>
+                        <img src={supplierCase.Criticite_Logo__c} alt="Criticite_Logo">
+                    </dd>
+                </div>
+     
+                <div class="slds-col slds-size_3-of-12 corps">
+                    <dt class="slds-item_label slds-text-color_weak " title="Typologie">Typologie:</dt>   
+                </div>
+                <div class="slds-col slds-size_3-of-12 corps">
+                    <dd class="slds-item_detail " title={supplierCase.Typologie_Logo__c}>
+                        <img src={supplierCase.Typologie_Logo__c} alt="Typologie_Logo">
+                    </dd>
+                </div>
+                <div class="slds-col slds-size_3-of-12 corps">
+                    <dt class="slds-item_label slds-text-color_weak " title="Thème">Thème:</dt>
+                    
+                </div>
+                <div class="slds-col slds-size_3-of-12 corps">
+                    <dd class="slds-item_detail " title={supplierCase.Epic_Logo__c}> 
+                        <img src={supplierCase.Epic_Logo__c} alt="Epic_Logo">
+                    </dd>
+                </div>
+                <div>
+                <dt class="slds-item_label slds-text-color_weak corps " title="Interlocuteur">Interlocuteur:</dt>
+                <dd class="slds-item_detail  corps position" title={supplierCase.Interlocutor__c}>{supplierCase.SupportAgent__c}</dd>
+
+                <dt class="slds-item_label slds-text-color_weak corps " title="Détail de la demande">Détail de la demande:</dt>
+                <dd class="slds-item_detail  corps" title={supplierCase.Description__c}>{supplierCase.Description__c}</dd>
+
+                <dt class="slds-item_label slds-text-color_weak  corps" title="Solution apportée">Solution apportée:</dt>
+                <dd class="slds-item_detail  corps" title={supplierCase.Solution__c}>{supplierCase.Solution__c}</dd>
+                </div>
+            </div>
+        </div>
+    </section>
+</template>

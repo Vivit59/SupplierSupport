@@ -1,0 +1,14 @@
+<template>
+    <div class="slds-grid slds-gutters place">
+        <div class={historicClass}>
+            <c-historic onrequestselect={handleRequestSelect}></c-historic>
+        </div>
+        
+            <template if:true={selectedRequest}>
+                <div class="slds-col slds-size_4-of-12 ticket-detail-column">
+                <c-ticket-detail supplier-case={selectedRequest} onclose={handleClose}></c-ticket-detail>
+                </div>       
+            </template>
+        
+    </div>
+</template>

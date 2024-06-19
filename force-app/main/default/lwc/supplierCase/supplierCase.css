@@ -1,0 +1,63 @@
+.disposition {
+    padding: 2em;
+    border: solid 10px;
+    border-radius: 20px;
+    border-color: #61BCA5;
+    background-color: #fff;
+    box-shadow: 0 15px 15px 0 rgba(0, 0, 0, 0.5);
+}
+
+.entete {
+    background-color: #61BCA5;
+    margin: -2.1em -2.1em 1em;
+}
+
+h2 {
+    font-size: 2em;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 1em;
+}
+
+.lgc-bg {
+    background-color: rgb(242 242 242);
+}
+
+.slds-form-element {
+    margin: 15px;
+}
+
+div.slds-form-element__control {
+    display: flex !important;
+    justify-content: space-between !important;
+}
+
+
+
+:host {
+    --slds-c-radio-mark-color-foreground: #fff;
+    --slds-c-radio-color-background-checked: #0FB5BC;
+    --slds-c-card-header-color-background: #0FB5BC;
+    --slds-c-card-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.5);
+    --slds-c-card-color-border: #0FB5BC;
+    --slds-c-card-radius-border: 20px;
+    --slds-c-card-sizing-border: 10px;
+
+}
+
+.custom-button {
+    --slds-c-button-brand-color-background: #0FB5BC;
+    --slds-c-button-radius-border: 5px;
+    display: flex !important;
+    justify-content: center !important;
+    color: #ECEDEF;
+    text-align: center;
+    cursor: pointer;
+    justify-items: center !important;
+    margin-top: 15px;
+}
+
+.file {
+    margin-left: 15px;
+}

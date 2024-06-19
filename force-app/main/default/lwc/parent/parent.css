@@ -1,0 +1,10 @@
+.place {
+    margin: 1.5em;
+}
+
+.ticket-detail-column {
+    border-left: 1px solid #d8dde6;
+    /* Optionnel: séparation visuelle */
+    padding-left: 1rem;
+    /* Optionnel: espace entre les colonnes */
+}

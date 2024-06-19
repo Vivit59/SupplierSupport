@@ -1,0 +1,79 @@
+<template>
+    <section title = "Historique"  class={historicClass}>
+        <header class="entete">
+            <h2>Historique</h2>
+        </header>
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered" aria-labelledby="element-with-table-label other-element-with-table-label">
+            <thead>
+              <tr class="slds-line-height_reset">
+                <th class="" scope="col">
+                  <div class="slds-truncate" title="Date">Date</div>
+                </th>
+                <th class="" scope="col">
+                  <div class="slds-truncate" title="Sujet">Sujet</div>
+                </th>
+                <th class="" scope="col">
+                  <div class="slds-truncate" title="Statut">Statut</div>
+                </th>
+                <th class="" scope="col">
+                  <div class="slds-truncate" title="Typologie">Typologie</div>
+                </th>
+                <th class="" scope="col">
+                  <div class="slds-truncate" title="Catégorie">Catégorie</div>
+                </th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <template if:true={requests}>
+                    <template for:each={requests} for:item="request">
+                        <tr key={request.Id}>
+                            <td data-label="Date">
+                                <div class="slds-truncate" title={request.formattedDate}>
+                                    {request.formattedDate}
+                                </div>
+                            </td>
+                            <td data-label="Sujet">
+                                <div class="slds-truncate" title={request.Title__c}>
+                                    <a href="#" data-id={request.Id} onclick={handleTitleClick} style="">{request.Title__c}</a>
+                                </div>
+                            </td>
+                            <td data-label="Statut">
+                                <div class="slds-truncate" title={request.Statut_Logo__c}>
+                                    <img src={request.Statut_Logo__c} alt="Statut_Logo">
+                                  
+                                </div>
+                            </td>
+                            <td data-label="Typologie">
+                                <div class="slds-truncate" title={request.Typologie_Logo__c}>
+                                    <img src={request.Typologie_Logo__c} alt="Typologie_Logo">
+                                </div>
+                            </td>
+                            <td data-label="Thème">
+                                <div class="slds-truncate" title={request.Epic_Logo__c}>
+                                    <img src={request.Epic_Logo__c} alt="Epic_Logo">
+                                </div>
+                            </td>
+                        </tr>
+                    </template>
+                </template>
+                <template if:false={requests}>
+                    <tr>
+                        <td colspan="5">
+                            <div class="slds-text-align_center">Aucune demande trouvée</div>
+                        </td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+    </section>
+
+    <template if:true={isPanelOpen}>
+        <div class="slds-col slds-size_4-of-12">
+             <c-ticket-detail supplier-case={selectedSupplierCase} onclose={handleClosePanel}></c-ticket-detail>
+        </div>
+       
+    </template>
+
+    
+</template>

@@ -1,0 +1,46 @@
+/*:host {
+    --slds-c-card-header-color-background: #8FC688;
+    --slds-c-card-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.5);
+    --slds-c-card-color-border: #8FC688;
+    --slds-c-panel-color-border: #8FC688;
+    --slds-c-panel-radius-border: 20px;
+    --slds-c-panel-sizing-border: 10px;
+}*/
+
+/*.custom-panel {
+    Appliquer les hooks de style personnalisés 
+    border-color: var(--slds-c-panel-border-color);
+
+    border-width: var(--slds-c-panel-border-width);
+    border-style: solid;
+}*/
+
+.disposition {
+    padding: 2em;
+    border: solid 10px;
+    border-radius: 20px;
+    border-color: #0FB5BC;
+    background-color: #fff;
+    box-shadow: 0 15px 15px 0 rgba(0, 0, 0, 0.5);
+}
+
+.entete {
+    background-color: #0FB5BC;
+    margin: -2.1em -2.1em 1em;
+}
+
+h2 {
+    font-size: 2em;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 1em;
+}
+
+a:link {
+    color: #0FB5BC;
+}
+
+img {
+    height: 30px;
+}

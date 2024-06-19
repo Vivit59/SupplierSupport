@@ -1,0 +1,61 @@
+.liste {
+    display: flex;
+    justify-content: space-between;
+}
+
+.disposition {
+    width: 60%;
+    margin: auto;
+    padding: 2em;
+    border: solid 10px;
+    border-radius: 20px;
+    border-color: #61BCA5;
+    background-color: #b9e0b4;
+    box-shadow: 0 15px 15px 0 rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+    font-size: 2em;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 1em;
+}
+
+.slds-modal__container {
+    max-width: 80%;
+    z-index: 1050;
+    border-radius: 20px;
+    border-color: #61BCA5;
+    background-color: #8fc688;
+}
+
+.slds-backdrop_open {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1040;
+}
+
+.custom-button {
+    --slds-c-button-brand-color-background: #0FB5BC;
+    --slds-c-button-radius-border: 5px;
+    display: flex !important;
+    justify-content: center !important;
+    color: #ECEDEF;
+    text-align: center;
+    cursor: pointer;
+    justify-items: center !important;
+    margin-top: 15px;
+}
+
+.slds-modal__header {
+    background-color: #8fc688;
+}
+
+.slds-modal__content {
+    background-color: #ECEDEF;
+}

@@ -1,0 +1,127 @@
+<!-- sldsValidatorIgnore -->
+<template>
+  <section title="Formulaire" class="disposition">
+    <header class="entete">
+        <h2>Formulaire</h2>
+    </header>
+    
+    <form>
+        <!--<lightning-radio-group 
+
+            class="custom-typo slds-radio"
+            name="typologyGroup" 
+            label="Typologie"
+            options={typologyOptions} 
+            value={selectedTypology} 
+            type="radio"
+            onchange={handleTypologyChange}>
+        </lightning-radio-group>-->
+        
+        <form class="slds-form-element">
+            <legend class="slds-form-element__legend slds-form-element__label">Typologie</legend>
+            <div class="slds-form-element__control">
+                <template for:each={typologyOptions} for:item="option">
+                    <span class="slds-radio" key={option.value}>
+                        <input 
+                            type="radio" 
+                            id={option.value} 
+                            value={option.value} 
+                            name="typology" 
+                            checked={option.isChecked}
+                            onchange={handleTypologyChange}
+                        />
+                        <label class="slds-radio__label" for={option.value}>
+                            <span class="slds-radio_faux"></span>
+                            <span class="slds-form-element__label">{option.label}</span>
+                        </label>
+                                <!--<img src={customIconUrl} alt="Custom Icon"> -->                
+                    </span>
+                </template>
+            </div>
+            </form>
+
+        <lightning-combobox
+            name="category"
+            label="Catégorie"
+            placeholder="Sélectionnez une catégorie" 
+            options={categoryOptions}
+            value={selectedCategory}
+            onchange={handleCategoryChange}>
+        </lightning-combobox>
+
+        <!-- <lightning-radio-group 
+            name="criticalityGroup" 
+            label="Criticite"
+            options={criticalityOptions} 
+            value={selectedCriticality} 
+            type="radio"
+            onchange={handleCriticalityChange}>
+        </lightning-radio-group> -->
+        <template if:true={showCriticalityAndFileUpload}>
+            <fieldset class="slds-form-element">
+                <legend class="slds-form-element__legend slds-form-element__label">Criticité</legend>
+                <div class="slds-form-element__control">
+                    <template for:each={criticalityOptions} for:item="option">
+                        <span class="slds-radio" key={option.value}>
+                            <input 
+                                type="radio" 
+                                id={option.value} 
+                                value={option.value} 
+                                name="criticality" 
+                                checked={option.isChecked}
+                                onchange={handleCriticalityChange}
+                            />
+                            <label class="slds-radio__label" for={option.value}>
+                                <span class="slds-radio_faux"></span>
+                                <span class="slds-form-element__label">{option.label}</span>
+                            </label>
+                        </span>
+                    </template>
+                </div>
+            </fieldset>
+        </template>
+
+        <lightning-input 
+            type="text" 
+            label="Titre" 
+            placeholder="Titre de votre demande" 
+            required
+            value={title}
+            onchange={handleTitleChange}>
+        </lightning-input>
+
+        <lightning-input-rich-text
+            label="Description"
+            value={richText}
+            placeholder="Détaillez votre demande"
+            onchange={handleRichTextChange}>
+        </lightning-input-rich-text>
+
+        <template if:true={showCriticalityAndFileUpload}>
+             <div class="file">
+            <lightning-file-upload
+            
+            label="Télécharger des fichiers"
+            name="fileUploader"
+            accept={acceptedFormats}
+            record-id={recordId}
+            onuploadfinished={handleUploadFinished}
+            multiple>
+        </lightning-file-upload>
+        </div>
+        </template>
+       
+        
+
+        <div class="custom-button">
+            <lightning-button
+                
+                variant="brand"
+                label="Valider"
+                onclick={handleSubmit}>
+            </lightning-button>
+        </div>
+    
+    </form>
+  </section>  
+</template>
